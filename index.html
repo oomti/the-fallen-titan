@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Fallen Titan — Jupiter's Magnetic Volcanic Cycle</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=JetBrains+Mono:wght@400;600&display=swap');
+
+  :root {
+    --bg: #08080e;
+    --bg2: #0c0c16;
+    --text: #d8cfc4;
+    --text2: #a09888;
+    --accent: #ff9654;
+    --accent2: #c87840;
+    --blue: #5ba3f5;
+    --red: #e85545;
+    --green: #50b878;
+    --purple: #a070d0;
+    --border: rgba(180,140,90,0.12);
+    --mono: 'JetBrains Mono', monospace;
+    --serif: 'Source Serif 4', 'Georgia', serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  /* Header */
+  .header {
+    margin-bottom: 56px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  .header .label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #665544;
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-size: 42px;
+    font-weight: 300;
+    line-height: 1.2;
+    color: #f0e8dc;
+    margin-bottom: 8px;
+  }
+  .header .subtitle {
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--accent2);
+    margin-bottom: 16px;
+  }
+  .header .meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: #665;
+    line-height: 1.8;
+  }
+
+  /* Sections */
+  h2 {
+    font-size: 28px;
+    font-weight: 400;
+    color: #f0e8dc;
+    margin: 56px 0 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 36px 0 12px;
+  }
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 24px 0 8px;
+  }
+
+  p { margin-bottom: 16px; color: var(--text2); }
+  strong, b { color: var(--text); font-weight: 600; }
+
+  /* Special blocks */
+  .evidence {
+    background: rgba(80,184,120,0.05);
+    border-left: 3px solid var(--green);
+    padding: 16px 20px;
+    margin: 20px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .evidence .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--green);
+    margin-bottom: 6px;
+  }
+
+  .mystery {
+    background: rgba(255,85,69,0.05);
+    border-left: 3px solid var(--red);
+    padding: 16px 20px;
+    margin: 20px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .mystery .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--red);
+    margin-bottom: 6px;
+  }
+
+  .mechanism {
+    background: rgba(91,163,245,0.05);
+    border-left: 3px solid var(--blue);
+    padding: 16px 20px;
+    margin: 20px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .mechanism .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--blue);
+    margin-bottom: 6px;
+  }
+
+  .prediction {
+    background: rgba(160,112,208,0.05);
+    border-left: 3px solid var(--purple);
+    padding: 16px 20px;
+    margin: 20px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .prediction .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--purple);
+    margin-bottom: 6px;
+  }
+
+  .equation {
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--accent);
+    background: rgba(255,150,84,0.06);
+    padding: 12px 18px;
+    border-radius: 4px;
+    margin: 16px 0;
+    text-align: center;
+  }
+
+  .cycle-diagram {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    margin: 24px 0;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 2.2;
+    color: var(--text2);
+  }
+  .cycle-diagram .step {
+    display: inline;
+  }
+  .cycle-diagram .arrow {
+    color: var(--accent2);
+    margin: 0 4px;
+  }
+
+  .timeline {
+    margin: 20px 0;
+    padding: 0;
+  }
+  .timeline .event {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+    align-items: baseline;
+  }
+  .timeline .year {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--accent);
+    min-width: 110px;
+    text-align: right;
+  }
+  .timeline .desc {
+    font-size: 15px;
+    color: var(--text2);
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 14px;
+  }
+  .data-table th {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #776;
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+    font-weight: 400;
+  }
+  .data-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(180,140,90,0.06);
+    color: var(--text2);
+  }
+
+  .footnote {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: #554;
+    margin-top: 4px;
+  }
+
+  blockquote {
+    border-left: 2px solid var(--accent2);
+    padding: 4px 0 4px 20px;
+    margin: 16px 0;
+    font-style: italic;
+    color: var(--text2);
+  }
+
+  .separator {
+    text-align: center;
+    margin: 48px 0;
+    color: var(--accent2);
+    font-size: 20px;
+    letter-spacing: 12px;
+  }
+
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .closing {
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    font-size: 19px;
+    font-style: italic;
+    color: var(--text2);
+    line-height: 1.9;
+  }
+
+  .refs {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+  .refs h2 { font-size: 20px; margin-top: 0; }
+  .refs p { font-size: 13px; line-height: 1.7; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <div class="label">SPECULATIVE HYPOTHESIS · INTELLECTUAL EXPLORATION</div>
+  <h1>The Fallen Titan</h1>
+  <div class="subtitle">Jupiter's Magnetic Volcanic Cycle and the Great Red Spot</div>
+  <div class="meta">
+    An intellectual curiosity — exploring whether Jupiter's Great Red Spot is the surface echo<br>
+    of a magnetic reconnection eruption from the planet's deep interior, and whether Jupiter<br>
+    and the Sun form a coupled magnetic system whose interactions shape both worlds.<br><br>
+    February 2026 · Created with Claude Opus 4.6 (Anthropic) through structured dialogue<br>
+    Status: Speculative hypothesis — all individual mechanisms are established physics,<br>
+    the combination and application are novel and untested.<br>
+    Those who are curious will find what they're looking for.
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<h2>I. The Question</h2>
+
+<p>Jupiter's Great Red Spot is the largest and longest-lived storm in the solar system — an anticyclonic vortex at 22°S latitude, currently about 14,000 km wide, observed continuously since 1831. It has been shrinking steadily, and several of its properties remain unexplained by standard atmospheric models.</p>
+
+<p>This document explores a specific hypothesis: <b>the GRS is not primarily an atmospheric phenomenon, but the visible surface signature of a dense, hot, magnetized body embedded in Jupiter's upper atmosphere — material erupted from Jupiter's own deep interior through a magnetic reconnection event analogous to a solar flare, now slowly sinking back.</b></p>
+
+<p>The hypothesis was developed by following physical reasoning through a chain of connected ideas, each grounded in established physics but combined in a way that has not been previously proposed.</p>
+
+<!-- ============================================================ -->
+<h2>II. What We Know — Confirmed Observations</h2>
+
+<h3>The GRS is anomalous</h3>
+
+<p>Multiple findings from NASA's Juno mission and Hubble Space Telescope data distinguish the GRS from ordinary atmospheric vortices:</p>
+
+<div class="evidence">
+  <div class="tag">CONFIRMED — JUNO/HUBBLE</div>
+  <p><b>Anomalous depth:</b> The GRS extends 300–500 km below the cloud tops (Parisi et al., <i>Science</i> 2021), but the jet streams feeding it reach 3,000 km deep. Juno scientists state the "driving mechanism of the Great Red Spot is different from the other vortices" and "it's not just a meteorological feature" (Bolton, Lunine).</p>
+</div>
+
+<div class="evidence">
+  <div class="tag">CONFIRMED — O'DONOGHUE ET AL., NATURE 2016</div>
+  <p><b>Bottom-up heating:</b> The upper atmosphere 800 km above the GRS is 1,600 K hotter than anywhere else on Jupiter — including auroral regions. The heating must come from below. The mechanism has been "simulated but not yet backed up by observations."</p>
+</div>
+
+<div class="evidence">
+  <div class="tag">CONFIRMED — SIMON ET AL. 2024</div>
+  <p><b>Unexplained 90-day oscillation:</b> The GRS exhibits coupled oscillations in size, shape, drift speed, and brightness with a ~90-day period. Amy Simon (NASA GSFC): "At present there are no hydrodynamic explanations." The oscillation persists despite the storm's ongoing shrinkage.</p>
+</div>
+
+<div class="evidence">
+  <div class="tag">CONFIRMED — SÁNCHEZ-LAVEGA ET AL. 2024</div>
+  <p><b>Steady shrinkage:</b> The GRS has contracted from ~39,000 km (1879) to ~14,000 km (2024). Width decrease is approximately linear at ~172 km/yr average, with a sharp acceleration after 2012 to ~930 km/yr. The shrinkage rate has no accepted explanation.</p>
+</div>
+
+<div class="evidence">
+  <div class="tag">CONFIRMED — MULTIPLE SOURCES</div>
+  <p><b>Near-perfect co-rotation:</b> The GRS moves at ~11,660 m/s (Jupiter's rotation speed at 22°S) with only 0.6–4.4 m/s westward drift. Keplerian orbital velocity at that radius would be ~42,500 m/s. The GRS co-rotates — it does not freely orbit.</p>
+</div>
+
+<h3>Mysteries the standard model cannot explain</h3>
+
+<div class="mystery">
+  <div class="tag">UNEXPLAINED</div>
+  <p><b>Why 1,600 K from below?</b> No atmospheric vortex model predicts localized bottom-up heating of this magnitude. Wind-driven storms are heated from the sides by shear, not from below.</p>
+</div>
+
+<div class="mystery">
+  <div class="tag">UNEXPLAINED</div>
+  <p><b>Why the 90-day period?</b> No hydrodynamic resonance in Jupiter's atmosphere matches this timescale. It is too short for seasonal effects and too long for typical atmospheric wave periods at this latitude.</p>
+</div>
+
+<div class="mystery">
+  <div class="tag">UNEXPLAINED</div>
+  <p><b>Why the post-2012 acceleration?</b> The shrinkage rate jumped ~4.5× with no identified cause. Small eddies feeding into the storm have been suggested but not demonstrated to explain the magnitude.</p>
+</div>
+
+<div class="mystery">
+  <div class="tag">UNEXPLAINED</div>
+  <p><b>Why is there only one GRS?</b> Jupiter has dozens of comparable jet stream channels at other latitudes. If wind shear alone can generate and sustain a 40,000 km storm, why isn't there always one at every latitude? Why is 22°S special?</p>
+</div>
+
+<!-- ============================================================ -->
+<h2>III. The Origin — Jupiter's Magnetic Volcano</h2>
+
+<h3>The eruption mechanism</h3>
+
+<p>Rather than a captured external body, we propose the GRS is driven by <b>material erupted from Jupiter's own deep interior</b> — a massive convective plume from the metallic hydrogen layer, triggered by magnetic reconnection.</p>
+
+<p>The mechanism is directly analogous to solar flares:</p>
+
+<div class="mechanism">
+  <div class="tag">ESTABLISHED PHYSICS — MAGNETIC RECONNECTION</div>
+  <p><b>On the Sun:</b> Convection tangles magnetic field lines → stress accumulates → topology becomes unstable → field lines "snap" (reconnect) → explosive energy release → mass ejected outward (CME).</p>
+  <p><b>On Jupiter:</b> Convection in the metallic H₂ layer tangles field lines → stress accumulates → reconnection → explosive energy release → mass ejected <i>upward</i> into the molecular atmosphere.</p>
+  <p>Jupiter has all the required ingredients: a vigorously convecting electrically conducting interior, a powerful dynamo generating fields up to 20,000 Gauss at depth, differential rotation to tangle field lines, and enormous energy stored in the magnetic field.</p>
+</div>
+
+<h3>The erupted material</h3>
+
+<p>The ejected body is made of Jupiter's own heavy elements — iron, silicates, and other metals concentrated in the deep interior during formation. This material is naturally:</p>
+
+<p><b style="color:var(--red)">Hot</b> — originating from the 15,000–20,000 K metallic hydrogen region.<br>
+<b style="color:var(--blue)">Electrically conducting</b> — metallic/rocky composition, σ ~ 10⁴–10⁶ S/m.<br>
+<b style="color:var(--purple)">Magnetized</b> — formed inside Jupiter's dynamo, carrying frozen-in magnetic flux.<br>
+<b style="color:var(--accent)">Dense</b> — 4,000–8,000 kg/m³ versus ambient H₂ at 1–100 kg/m³.<br>
+<b style="color:var(--green)">Radioactive</b> — concentrated U, Th, K-40 providing sustained internal heat.</p>
+
+<p>No exotic physics or external capture mechanism is required. Jupiter erupts its own interior material — a magnetic volcano.</p>
+
+<h3>Localized fusion at the reconnection site</h3>
+
+<p>At the magnetic reconnection X-point, converging field lines create a natural magnetic bottle. Particles are accelerated to keV–MeV energies — equivalent to temperatures of millions of degrees in the localized volume. The surrounding medium is the densest hydrogen in the solar system.</p>
+
+<div class="mechanism">
+  <div class="tag">BEAM-TARGET FUSION</div>
+  <p>Accelerated protons and deuterium nuclei slam into dense cold hydrogen. Jupiter's atmosphere contains deuterium at D/H ~ 2.6 × 10⁻⁵. At the densities present in the metallic hydrogen layer, collision rates are enormous. A statistically inevitable fraction of these collisions undergo fusion — not because the bulk medium is hot enough, but because individual particles carry sufficient energy from the magnetic field.</p>
+  <p>This is not speculative physics. It is exactly how particle accelerators produce fusion on Earth, and how cosmic ray spallation produces nuclear reactions in planetary atmospheres. The rate is vanishingly small in global energy terms — but the localized energy release is immense.</p>
+  <p><b>The result:</b> A plasma bubble heated to millions of degrees, catastrophically buoyant inside the 20,000 K surrounding medium. This self-propelled rising plume entrains dense metallic material and erupts upward through the atmosphere.</p>
+</div>
+
+<!-- ============================================================ -->
+<h2>IV. The Descent — Three Braking Mechanisms</h2>
+
+<p>The erupted body overshoots upward, stalls in the molecular hydrogen atmosphere at a few hundred km depth, and begins sinking back under gravity. Three mechanisms resist the descent:</p>
+
+<h3>1. The Leidenfrost Envelope (Thermal Shield)</h3>
+
+<div class="mechanism">
+  <div class="tag">ESTABLISHED PHYSICS — FILM BOILING</div>
+  <p>The body (thousands of degrees K) heats the surrounding gas, creating a low-density thermal bubble — analogous to a water droplet hovering on a hot surface. This "Leidenfrost envelope" reduces aerodynamic drag by up to ~90% and provides partial buoyancy.</p>
+  <p>The mechanism is self-regulating: more drag → more heating → larger envelope → less drag. It is also the source of the visible storm — the thermal plume rising from the envelope drives convection which, deflected by the Coriolis force on rapidly-rotating Jupiter, spins up into the anticyclonic vortex we observe.</p>
+</div>
+
+<h3>2. Lenz's Law (Electromagnetic Braking)</h3>
+
+<div class="mechanism">
+  <div class="tag">ESTABLISHED PHYSICS — FARADAY/LENZ</div>
+  <p>A conducting body moving through a magnetic field induces eddy currents that oppose the motion — the classic demonstration of a magnet falling slowly through a copper tube. The braking force is:</p>
+</div>
+
+<div class="equation">F_Lenz = −σ · v · B² · V · κ</div>
+
+<p>This operates in two channels simultaneously: eddy currents induced in the conducting body, and eddy currents induced in the surrounding medium (like the copper tube around the magnet). Since both B and σ of the medium increase with depth in Jupiter, the braking force grows enormously as the body descends.</p>
+
+<p><b>Critical dual role:</b> The eddy currents that brake the body also generate Joule heat (P = I²R), which partially replenishes the thermal envelope. Lenz's law simultaneously slows the descent and feeds the Leidenfrost shield.</p>
+
+<h3>3. Magnetic Co-rotation</h3>
+
+<div class="mechanism">
+  <div class="tag">ESTABLISHED PHYSICS — MHD CO-ROTATION</div>
+  <p>The body is magnetically coupled to Jupiter's rotating metallic hydrogen interior. Angular momentum lost to drag is continuously replenished from Jupiter's enormous rotational reservoir (6.9 × 10³⁸ kg·m²/s). The body co-rotates with the planet rather than following a Keplerian orbit — exactly as observed (GRS speed: 11,660 m/s vs. Keplerian: 42,500 m/s).</p>
+</div>
+
+<!-- ============================================================ -->
+<h2>V. The Inverse Leidenfrost Effect — Critical Collapse</h2>
+
+<p>The core insight of this model is that <b>the system's ability to protect its energy is coupled to the energy itself</b>. As the body's temperature advantage over the surrounding gas decreases (by sinking into progressively hotter ambient gas), the thermal envelope shrinks, exposing the body to more drag, which accelerates the sinking, which further reduces the temperature differential. A positive feedback loop.</p>
+
+<div class="cycle-diagram">
+  Less energy <span class="arrow">→</span> thinner shield <span class="arrow">→</span> more drag <span class="arrow">→</span> faster sinking <span class="arrow">→</span> hotter ambient <span class="arrow">→</span> less ΔT <span class="arrow">→</span> less energy advantage <span class="arrow">→</span> ↻
+</div>
+
+<p>This is the <b>inverse Leidenfrost transition</b> — analogous to dropping below the Leidenfrost point on a hot surface, where the vapor layer collapses and cooling accelerates catastrophically.</p>
+
+<h3>The mathematical signature: ln(1−x)</h3>
+
+<p>This feedback produces a characteristic shrinkage curve:</p>
+
+<div class="equation">W(t) = a + b · ln(T_c − t)</div>
+
+<p>where T<sub>c</sub> is the critical time — the singularity at which the visible storm vanishes. The rate of shrinkage dW/dt = −b/(T<sub>c</sub> − t) — a hyperbola that accelerates toward infinity as t → T<sub>c</sub>.</p>
+
+<p>Fitting this model to 145 years of GRS width measurements (1879–2024) yields a high R² and — crucially — <b>naturally captures the post-2012 acceleration without requiring a piecewise break</b>. The acceleration is built into the model as the expected behavior approaching the critical point.</p>
+
+<p>The residuals of the ln(1−x) fit are more randomly distributed than those of a simple linear fit, whose residuals show the systematic S-curve pattern characteristic of forcing a straight line through curved data.</p>
+
+<h3>The transition from thermal to magnetic braking</h3>
+
+<p>As the Leidenfrost envelope collapses, the body transitions from <b>thermally-braked</b> (shallow, where drag on the envelope dominates) to <b>magnetically-braked</b> (deep, where Lenz's law dominates). The visible storm vanishes when the thermal envelope becomes negligible — but the body does not plummet. Lenz braking, which depends on the body's conductivity and Jupiter's B field rather than temperature, becomes the last line of defense.</p>
+
+<p>The body persists at depth, invisible from the cloud tops but detectable by gravity measurements.</p>
+
+<!-- ============================================================ -->
+<h2>VI. The H₂O Cloud Layer — Boundary Crossing</h2>
+
+<p>At 68–82 km depth, Jupiter's atmosphere contains a water cloud condensation layer. When the hot body passes through this zone, it encounters a radically different thermal environment.</p>
+
+<table class="data-table">
+  <tr><th>PROPERTY</th><th>VALUE</th></tr>
+  <tr><td>Depth range</td><td>68–82 km from cloud tops</td></tr>
+  <tr><td>Temperature</td><td>250–310 K</td></tr>
+  <tr><td>Pressure</td><td>5–8 bar</td></tr>
+  <tr><td>H₂O latent heat</td><td>2.26 MJ/kg (vaporization)</td></tr>
+  <tr><td>H₂O heat capacity</td><td>4,186 J/kg/K (4× hydrogen gas)</td></tr>
+  <tr><td>Layer thickness</td><td>~14 km</td></tr>
+</table>
+
+<p>The body's surface (thousands of degrees) instantly vaporizes surrounding water. Steam has ~1,600× lower density than liquid water at these pressures. This creates a massive steam envelope — much larger than the Leidenfrost envelope in dry hydrogen. Water's enormous latent heat and heat capacity mean the envelope stores vastly more thermal energy. The visible storm <i>grows</i>.</p>
+
+<div class="mechanism">
+  <div class="tag">KEY INSIGHT — THE BODY CROSSES THE H₂O LAYER TWICE</div>
+  <p>The erupted body <b>rises first, then sinks</b>. It therefore traverses the H₂O condensation layer on the way up (fast, driven by eruption momentum and thermal buoyancy) and again on the way down (slow, braked by Leidenfrost effect and Lenz's law). Each crossing produces a growth episode — but at different speeds, and therefore different durations.</p>
+  <p><b>Ascending crossing (~1872–1876):</b> ~4 years. The body is still hot and moving fast. Violent steam interaction, dramatic reddening, rapid size increase. This is when the GRS became the iconic feature we recognize.</p>
+  <p><b>Descending crossing (~1927–1939):</b> ~12 years. The body is cooler, moving at ~1 km/yr. The 14 km thick water layer takes ~14 years to traverse. Growth but less dramatic — consistent with observations.</p>
+  <p>The speed ratio checks: if ascending speed through the H₂O layer was ~3–4 km/yr and descending speed was ~1–1.2 km/yr, the crossing durations are ~4 years and ~12 years respectively — matching both observed growth episodes.</p>
+</div>
+
+<!-- ============================================================ -->
+<h2>VII. Two Components — The Plume and The Body</h2>
+
+<p>A deep eruption does not send a uniform blob upward. It produces two distinct components that separate in time:</p>
+
+<h3>The hot stream (mushroom / plume)</h3>
+
+<p>Superheated plasma at millions of degrees, catastrophically buoyant in 20,000 K surroundings. This is the mushroom cloud — not the bomb material, but the heated gas column. It races upward at tens to hundreds of km/yr. A nuclear mushroom cloud rises kilometers in seconds; scaled to Jupiter's atmosphere, the hot stream traverses thousands of kilometers in years, not decades. It arrives at the cloud tops <b>within 1–3 years of the eruption</b> and creates the first visible disturbance: a faint oval, no strong color — just hot gas perturbing the cloud deck. This is what astronomers see first.</p>
+
+<h3>The dense body (ejecta)</h3>
+
+<p>The actual metallic/rocky material entrained in the eruption. Much heavier — 4,000–8,000 kg/m³ versus surrounding gas at 1–100 kg/m³. Rises more slowly, driven by the eruption's initial impulse and its own thermal buoyancy (hot, so less dense than it would be cold, but still far denser than hydrogen). It follows the hot stream upward over <b>decades</b>. This is what carries the mass, the magnetism, the Leidenfrost envelope, and eventually the 90-day oscillation. When it arrives at shallow depth, the storm intensifies dramatically — reddening, rapid growth, peak size.</p>
+
+<p>The plume is the announcement. The body is what matters.</p>
+
+<h3>The eruption and the first sighting are nearly simultaneous</h3>
+
+<p>Because the hot stream is fast, the eruption date can be estimated directly from the first faint sighting — separated by at most a few years. This means the eruption should correlate with a significant magnetic event in the solar record, since the same reconnection that launches the plume also restructures Jupiter's dynamo, propagating a perturbation to the Sun.</p>
+
+<h3>Estimating the body's dimensions</h3>
+
+<p>The H₂O layer crossings provide a direct measurement of the body's vertical extent, and the storm's width constrains the horizontal extent.</p>
+
+<h4>Height — from H₂O crossing duration</h4>
+
+<p>The total interaction time between the body and the water layer equals (layer thickness + body height) / speed. We have two independent measurements:</p>
+
+<div class="equation">Descending: 12 yr × 1.2 km/yr = 14.4 km = 14 km (layer) + h</div>
+<div class="equation">Ascending: 4 yr × 3.5 km/yr = 14.0 km = 14 km (layer) + h</div>
+
+<p>Both crossings independently give a body height of <b>~0–0.5 km</b>. The body's vertical extent is negligible compared to the H₂O layer thickness. This is not a sphere — it is a <b>thin, flat structure</b>, consistent with erupted material that has been compressed by Jupiter's enormous atmospheric pressure into a pancake or debris field.</p>
+
+<h4>Width — from the storm and the oscillation</h4>
+
+<p>Two constraints bracket the body's width:</p>
+
+<p><b>Upper bound — the 90-day oscillation.</b> The body oscillates in longitude with an amplitude of ~1° = ~1,100 km at 22°S latitude. The body must be smaller than its own libration amplitude. So width &lt; ~1,000 km.</p>
+
+<p><b>Scaling from storm size.</b> The GRS at peak was ~39,000 km wide. The storm is the thermal plume and Coriolis-driven vortex — not the body itself. The ratio of convective heat source to resulting atmospheric vortex in rapidly rotating systems is typically 1:10 to 1:100. This suggests a body width of ~400–4,000 km. Combined with the oscillation constraint: <b>~400–1,000 km wide</b>.</p>
+
+<div class="evidence">
+  <div class="tag">BODY DIMENSIONS — ESTIMATED</div>
+  <p><b>Width: ~400–1,000 km</b> (constrained by 90-day oscillation amplitude and storm-to-source scaling)<br>
+  <b>Height: ~0.1–0.5 km</b> (constrained by H₂O crossing durations from two independent measurements)<br>
+  <b>Shape: extremely flat</b> — a vast metallic pancake or debris field, not a sphere<br>
+  <b>Density: ~4,000–8,000 kg/m³</b> (metallic/rocky, erupted from heavy element inventory)<br>
+  <b>Mass estimate:</b> For a disk 700 km wide × 0.3 km thick × 6,000 kg/m³ ≈ 7 × 10¹⁷ kg — roughly comparable to a large asteroid (Vesta is ~2.6 × 10²⁰ kg). If the effective density is lower due to porosity or entrained gas, mass could be 1–2 orders of magnitude less.</p>
+</div>
+
+<p>The flatness makes physical sense: erupted material rising through dense atmosphere spreads laterally, held together by its own gravity and magnetic cohesion. The enormous pressure at depth (thousands of atmospheres) compresses any vertical structure. What remains is a thin, wide, hot conducting sheet — invisible from above, but massive enough to drive the largest storm in the solar system through its thermal output alone.</p>
+
+<h3>The smallness is an argument, not a problem</h3>
+
+<p>A 700 km disk 300 meters thick. Roughly the area of France, the thickness of a tall building. You could walk across it in a week. And it drives a 39,000 km storm for 200 years.</p>
+
+<p>This works because what matters is not mass but <b>surface area and temperature</b>. A flat, hot disk maximizes the contact area between the heat source and the atmosphere. The thermal power output from a 700 km disk at ~3,000 K in a 200 K environment:</p>
+
+<div class="equation">P = σ · T⁴ · A ≈ 5.67 × 10⁻⁸ × 3000⁴ × 4 × 10¹¹ ≈ 1.8 × 10¹⁸ W</div>
+
+<p>That is roughly <b>5,000 times Jupiter's entire measured internal heat output</b> (335 TW). Even if 99% of the radiated energy is reabsorbed by the surrounding atmosphere rather than driving convective plumes, the remaining 1% (~1.8 × 10¹⁶ W) is still ~50× Jupiter's total heat flux — vastly more than enough to power the storm. As the body cools from 3,000 K to 1,000 K, the power drops by ~80× (T⁴ dependence) — but even at late stages it remains sufficient.</p>
+
+<p>The flatness is an <i>advantage</i> for storm driving: maximum surface contact per unit mass. A sphere of the same mass would have far less surface area and drive a weaker vortex.</p>
+
+<p>The smallness also explains why the body has not been detected. A 10¹⁷–10¹⁸ kg anomaly inside a 1.9 × 10²⁷ kg planet is one part in a billion — like detecting a grain of sand by weighing a beach. It sits right at the edge of Juno's gravity resolution. Nobody has looked for it because nobody expected it to be there. A dedicated search — filtering Juno gravity data for a localized anomaly at 22°S that migrates deeper over the mission lifetime — <i>might</i> find it.</p>
+
+<!-- ============================================================ -->
+<h2>VIII. The Two Observed Cycles</h2>
+
+<h3>The Cassini Cycle — Permanent Spot (1665–1713)</h3>
+
+<p>A smaller eruption, a shorter visible lifetime, a weaker solar imprint — but the same mechanism.</p>
+
+<div class="timeline">
+  <div class="event"><div class="year">~1645</div><div class="desc">Maunder Minimum begins — preceding body (from an earlier, unrecorded cycle) re-enters the metallic H₂ layer. Dynamo perturbation suppresses solar activity.</div></div>
+  <div class="event"><div class="year">~1660–63</div><div class="desc"><b style="color:var(--red)">Eruption.</b> Magnetic reconnection + localized fusion in the metallic H₂ layer. Hot plume launches upward. Dense body entrained, ascending slowly. Dynamo restructured — perturbation sustains Maunder suppression.</div></div>
+  <div class="event"><div class="year">~1663–65</div><div class="desc"><b style="color:var(--accent)">Hot stream arrives at cloud tops.</b> Faint oval disturbance appears at 22°S.</div></div>
+  <div class="event"><div class="year">1665</div><div class="desc">Cassini observes the "Permanent Spot." SSN ≈ 0. Maunder Minimum deep.</div></div>
+  <div class="event"><div class="year">1665–90</div><div class="desc"><b>Dense body still ascending.</b> PS grows, though smaller than the future GRS (~1/3 to 1/2 the width). Smaller eruption = less mass, less energy, less rise height.</div></div>
+  <div class="event"><div class="year">~1685–95</div><div class="desc">Dense body reaches shallowest depth. PS at peak size and prominence. Body stalls, begins sinking.</div></div>
+  <div class="event"><div class="year">1695–1713</div><div class="desc"><b>PS fading.</b> Body sinking, thermal envelope shrinking. Visibility fluctuates — PS observed intermittently, sometimes lost.</div></div>
+  <div class="event"><div class="year">1711–12</div><div class="desc">SSN = 0. Solar activity at absolute minimum.</div></div>
+  <div class="event"><div class="year">1713</div><div class="desc"><b style="color:var(--red)">PS vanishes.</b> Body sinks below observable depth. Thermal plume too weak to perturb cloud tops.</div></div>
+  <div class="event"><div class="year">1713–17</div><div class="desc"><b style="color:var(--green)">Sun reactivates.</b> SSN jumps: 2 → 11 → 27 → 47 → 63. Maunder Minimum ends within 5 years. The Jovian dynamo perturbation has changed — the body is descending, not erupting.</div></div>
+  <div class="event"><div class="year">1713–1800</div><div class="desc"><b>Quiet descent.</b> PS body sinks through deep atmosphere, braked by Lenz's law. Jupiter magnetically quiet. Sun cycles freely — strong peaks at SSN 122 (1727), 154 (1778), 132 (1787).</div></div>
+  <div class="event"><div class="year">~1790–1828</div><div class="desc"><b style="color:var(--purple)">Re-entry approaches.</b> Body nears metallic H₂ layer. Dalton Minimum begins — weak solar cycles (SSN peaks: 47, 46, 71). Jupiter's deep magnetic field increasingly perturbed by approaching cold, dense, magnetically mismatched remnant.</div></div>
+</div>
+
+<h3>The Carrington Cycle — Great Red Spot (1831–present)</h3>
+
+<p>A larger eruption, triggered by the Cassini body's re-entry into an already stressed dynamo. Every phase matches a solar event.</p>
+
+<div class="timeline">
+  <div class="event"><div class="year">~1828</div><div class="desc"><b style="color:var(--red)">Eruption.</b> Cassini body re-enters metallic H₂ layer after ~115 years of descent. Cold intrusion into hot dynamo → massive magnetic reconnection. Localized fusion event. Hot plume launches. Dense body entrained. Dynamo restructured.</div></div>
+  <div class="event"><div class="year">1829</div><div class="desc">Solar Cycle 7 minimum — SSN 7.0. Last gasp of the Dalton Minimum. The eruption perturbation propagates toward the Sun.</div></div>
+  <div class="event"><div class="year">~1829–31</div><div class="desc"><b style="color:var(--accent)">Hot stream arrives at cloud tops.</b> Faint Hollow first sketched by Schwabe, September 1831. No color — just hot gas disturbing the atmosphere.</div></div>
+  <div class="event"><div class="year">1831–37</div><div class="desc"><b style="color:var(--green)">Sun detonates.</b> Solar Cycle 8 peaks at SSN 138.3 — nearly triple the Dalton average. Dalton Minimum is over. The same eruption that sent the plume upward also restructured the Jovian dynamo, releasing the Sun from suppression.</div></div>
+  <div class="event"><div class="year">1831–72</div><div class="desc"><b>Dense body ascending.</b> Storm intensifies gradually over 40 years. 60+ observations recorded. Hollow visible but not red. The body is still rising — each year shallower, each year the thermal plume stronger.</div></div>
+  <div class="event"><div class="year">~1872–76</div><div class="desc"><b style="color:var(--blue)">Dense body crosses H₂O layer — ascending.</b> Fast passage (~4 years at ~3–4 km/yr). Violent steam interaction. Dramatic reddening. Rapid size expansion. The GRS becomes the iconic red oval.</div></div>
+  <div class="event"><div class="year">~1876–79</div><div class="desc">Body clears the H₂O layer, continues rising to shallowest depth.</div></div>
+  <div class="event"><div class="year">1879</div><div class="desc"><b style="color:var(--accent)">Peak.</b> First photograph (Clerke). Width ~39,000 km. Dense body at shallowest depth — maximum thermal contrast, maximum envelope, maximum storm. Body stalls, begins sinking.</div></div>
+  <div class="event"><div class="year">1859</div><div class="desc"><b style="color:var(--red)">Carrington Event.</b> Largest recorded solar storm. Both Sun and Jupiter in peak stress — GRS body still ascending, Jovian dynamo perturbation at maximum, coupled system at highest energy. The event that names this cycle.</div></div>
+  <div class="event"><div class="year">1879–1927</div><div class="desc"><b>Slow descent begins.</b> Body sinking at ~1–2 km/yr. Storm gradually shrinking. Leidenfrost envelope and Lenz braking resist descent.</div></div>
+  <div class="event"><div class="year">1927–39</div><div class="desc"><b style="color:var(--blue)">Dense body crosses H₂O layer — descending.</b> Slow passage (~12 years at ~1.2 km/yr). Steam envelope re-inflates. GRS grows again. South Tropical Disturbance absorbed — consequence of expanding thermal envelope, not cause of growth.</div></div>
+  <div class="event"><div class="year">1939–2012</div><div class="desc"><b>Pure decline.</b> Body below all condensation layers. Leidenfrost envelope in dry hydrogen only. Steady shrinkage from ~30,000 km to ~17,000 km.</div></div>
+  <div class="event"><div class="year">2012–present</div><div class="desc"><b style="color:var(--red)">Accelerating collapse.</b> Inverse Leidenfrost feedback engages. Shrinkage rate jumps ~4.5×. Width drops from ~17,000 km to ~14,000 km in 12 years. The critical point approaches.</div></div>
+  <div class="event"><div class="year">~2060–70</div><div class="desc"><b style="color:var(--purple)">Predicted: visible storm vanishes.</b> Thermal envelope too weak to sustain cloud-top vortex. Body persists at depth — detectable by gravity, not by eye.</div></div>
+  <div class="event"><div class="year">~2070–2170</div><div class="desc"><b>Predicted: quiet descent.</b> Body sinks through deep atmosphere, Lenz-braked. Jupiter magnetically quiet. Sun cycles freely. Low probability of Carrington-class events.</div></div>
+  <div class="event"><div class="year">~2170–2200</div><div class="desc"><b style="color:var(--red)">Predicted: re-entry → next eruption.</b> Cold body enters metallic H₂. New reconnection. New cycle begins. New visible storm at 22°S. Correlated solar anomaly.</div></div>
+</div>
+
+<h3>Why the Carrington Cycle is larger</h3>
+
+<p>The Cassini body's re-entry didn't just bring its own mass back to the dynamo. It perturbed a region where magnetic stress had been rebuilding for over a century — undisturbed since the previous eruption. The cold intrusion was the final trigger for a larger reconnection event. More energy stored → larger eruption → more mass ejected → taller rise → wider storm → longer visible lifetime. The PS lasted 48 visible years; the GRS has lasted 195 and counting.</p>
+
+<h3>The 22°S potential well</h3>
+
+<p>Both the PS and GRS occur at the same latitude — and if the model is correct, the same longitude in the rotating frame. This is not coincidence. It indicates a <b>structurally preferred eruption site</b> — a fixed point in Jupiter's deep interior where the dynamo geometry, differential rotation profile, and accumulated heavy element concentration create a permanent vulnerability. A volcanic vent.</p>
+
+<p>Each cycle reinforces the structure: accumulated heavy elements from previous eruptions make the location denser, gravitationally more distinct, a deeper potential well, ensuring future eruptions and their ejecta return to the same spot. The vent is self-reinforcing over billions of years.</p>
+
+<h3>The generic cycle — two-component model</h3>
+
+<div class="cycle-diagram" style="text-align:left; line-height: 2.4;">
+  <b style="color:var(--red)">1.</b> Magnetic stress accumulates in the metallic H₂ dynamo layer<br>
+  <b style="color:var(--red)">2.</b> Reconnection → localized fusion burn → superheated plasma bubble<br>
+  <b style="color:var(--accent)">3.</b> <b>Hot stream</b> races upward (years) — first faint disturbance at cloud tops<br>
+  <b style="color:var(--accent)">4.</b> <b>Dense body</b> follows slowly (decades) — storm intensifies as it rises<br>
+  <b style="color:var(--blue)">5.</b> Body crosses H₂O layer ascending (fast) — reddening, rapid growth<br>
+  <b style="color:var(--green)">6.</b> Body reaches shallowest depth — peak size — stalls<br>
+  <b style="color:var(--blue)">7.</b> Body sinks, crosses H₂O layer descending (slow) — second growth episode<br>
+  <b style="color:var(--blue)">8.</b> Pure decline — inverse Leidenfrost collapse<br>
+  <b style="color:var(--purple)">9.</b> Visible storm vanishes — body persists at depth<br>
+  <b style="color:var(--purple)">10.</b> Body descends through deep atmosphere (Lenz-braked, ~100 yr)<br>
+  <b style="color:var(--red)">11.</b> Cold body re-enters metallic H₂ → reconnection trigger → next cycle<br>
+</div>
+
+<!-- ============================================================ -->
+<h2>IX. The Sun-Jupiter Magnetic Coupling</h2>
+
+<h3>Two dominant dipoles</h3>
+
+<p>The Sun and Jupiter are the two dominant magnetic objects in the solar system. The interplanetary magnetic field physically connects them — field lines from the Sun merge with Jupiter's magnetopause through continuous magnetic reconnection. This is not metaphor. It is measured.</p>
+
+<p>Jupiter's orbital period (11.86 years) is close to the solar activity cycle (~11 years). There is a long, contentious debate about whether this is coincidence. Published papers in journals such as <i>Solar Physics</i> find statistical correlations between planetary configurations and solar cycle timing.</p>
+
+<h3>Bidirectional coupling</h3>
+
+<p>The model proposes that during Jupiter's active eruption phase, its restructured internal dynamo alters the magnetic flux and plasma injection into the heliosphere. The Sun's own dynamo, operating near criticality, is sensitive to these perturbations. The coupling is bidirectional:</p>
+
+<p><b>Sun → Jupiter:</b> Periods of intense solar activity (stronger, more turbulent IMF) drive currents into Jupiter's interior, adding stress to the already-loaded internal field lines, lowering the threshold for reconnection. Solar events don't cause Jupiter's eruptions but can co-trigger them.</p>
+
+<p><b>Jupiter → Sun:</b> Jupiter's eruption restructures its dynamo, propagating magnetic disturbances outward through the heliosphere. These perturbations modulate the Sun's longer-period activity variations — the grand minima and maxima that have no accepted explanation from solar physics alone.</p>
+
+<h3>The sunspot correlation — actual data</h3>
+
+<p>The yearly mean sunspot number (SSN) has been recorded since 1700 (National Geophysical Data Center, Boulder; SILSO v2.0, Royal Observatory of Belgium). Reliable telescopic observations extend to 1610. Before that, ¹⁴C in tree rings and ¹⁰Be in ice cores provide proxy records extending ~14,000 years with decadal resolution.</p>
+
+<p>When we overlay the sunspot record with the known timeline of Jupiter's atmospheric events, the correlations are striking:</p>
+
+<h4>1645–1713: Maunder Minimum ≡ Cassini's Permanent Spot</h4>
+
+<p>The deepest solar minimum in the modern record — SSN near zero for 70 years — overlaps almost exactly with the only other confirmed GRS-like storm on Jupiter. The Permanent Spot was first observed by Cassini in 1665, twenty years into the Maunder Minimum, and was last seen in 1713. The sunspot record at that boundary:</p>
+
+<table class="data-table">
+  <tr><th>YEAR</th><th>SSN</th><th>JUPITER</th></tr>
+  <tr><td>1710</td><td>3</td><td>PS still visible</td></tr>
+  <tr><td>1711</td><td>0</td><td>PS fading</td></tr>
+  <tr><td>1712</td><td>0 (min)</td><td>PS last confirmed</td></tr>
+  <tr><td>1713</td><td>2</td><td><b>PS disappears — Maunder Minimum ends</b></td></tr>
+  <tr><td>1714</td><td>11</td><td>No spot</td></tr>
+  <tr><td>1715</td><td>27</td><td>Sun reactivating</td></tr>
+  <tr><td>1716</td><td>47</td><td>—</td></tr>
+  <tr><td>1717</td><td>63 (MAX)</td><td>Strong cycle resumes</td></tr>
+</table>
+
+<p>The Sun wakes up at the exact moment Jupiter's spot vanishes. The transition is not gradual — SSN jumps from 0 to 63 in five years. In the model: the PS body sinks below the observable atmosphere, the Jovian dynamo perturbation changes character, and the Sun's suppressed cycles are released.</p>
+
+<h4>1713–1831: The gap — normal solar cycling</h4>
+
+<p>With no visible spot on Jupiter, the Sun cycles freely. This period includes some of the strongest observed solar cycles: SSN peaks of 122 (1727), 154 (1778), and 132 (1787). The previous body is sinking through Jupiter's deep atmosphere — magnetically quiet from the heliospheric perspective.</p>
+
+<h4>1790–1830: Dalton Minimum — predicted re-entry window</h4>
+
+<p>Solar activity drops again. Cycle peaks are suppressed to SSN ~47–49, compared to 130–154 in the preceding cycles. The model predicts this is when the PS body re-enters the metallic hydrogen layer after ~80–100 years of descent. The re-entry perturbs Jupiter's dynamo, and the altered magnetic output contributes to the Sun's weakened activity.</p>
+
+<table class="data-table">
+  <tr><th>YEAR</th><th>SSN</th><th>JUPITER</th></tr>
+  <tr><td>1797</td><td>6.4</td><td>Dalton deepening</td></tr>
+  <tr><td>1798</td><td>4.1 (min)</td><td>Predicted re-entry window</td></tr>
+  <tr><td>1804</td><td>47.5 (MAX)</td><td>Weak cycle — suppressed</td></tr>
+  <tr><td>1816</td><td>45.8 (MAX)</td><td>Still weak</td></tr>
+  <tr><td>1829</td><td>7.0 (min)</td><td>Last Dalton minimum</td></tr>
+  <tr><td>1831</td><td>—</td><td><b>GRS Hollow first observed</b></td></tr>
+  <tr><td>1833</td><td>8.5</td><td>New cycle building</td></tr>
+  <tr><td>1837</td><td>138.3 (MAX)</td><td><b>Strongest cycle in 50 years</b></td></tr>
+</table>
+
+<p>The Dalton Minimum ends and the GRS appears at the same moment — just as the Maunder Minimum ended when the PS vanished. The new eruption restructures Jupiter's dynamo, a different perturbation propagates outward, and the Sun responds with its strongest cycle in half a century.</p>
+
+<h4>1859: The Carrington Event</h4>
+
+<p>The largest recorded solar storm occurred during Solar Cycle 10 — 28 years after the GRS first appeared and 13–17 years before the GRS reached peak visibility and redness (1872–1876). In the model, the Carrington CME and the GRS eruption are not cause and effect but <b>correlated responses</b> to a shared peak in the magnetic stress of the Sun-Jupiter system. The mid-19th century was a period of extreme activity in both objects simultaneously.</p>
+
+<h4>1927–1939: GRS growth episode</h4>
+
+<p>The GRS temporarily expanded — attributed in our model to the body crossing the H₂O condensation layer. This period falls during Solar Cycles 16–17. Cycle 16 was relatively weak (SSN ~78), but Cycle 17 peaked in 1937 at SSN ~119, strengthening as the GRS growth episode was underway. The thermal flare-up in Jupiter's atmosphere — temporarily re-energizing the Jovian dynamo perturbation — coincides with strengthening solar activity.</p>
+
+<h4>Grand minima — the longer record and future predictions</h4>
+
+<p>The ¹⁴C and ¹⁰Be proxy records reveal additional grand minima extending back millennia. The model predicts the pattern extends forward as well:</p>
+
+<table class="data-table">
+  <tr><th>SOLAR EVENT</th><th>DATES</th><th>JUPITER EVENT</th><th>SPACING</th></tr>
+  <tr style="color:var(--purple)"><td><i>Predicted next minimum</i></td><td><i>~2170–2220</i></td><td><i>GRS body re-entry → next eruption</i></td><td><i>~340 yr</i></td></tr>
+  <tr style="color:var(--purple)"><td><i>Predicted quiet window</i></td><td><i>~2060–2170</i></td><td><i>GRS vanishes, body descending — low Carrington risk</i></td><td>—</td></tr>
+  <tr><td><b>Current: declining phase</b></td><td><b>1831–~2060</b></td><td><b>Carrington Cycle — GRS visible, body sinking</b></td><td>—</td></tr>
+  <tr><td>Dalton Minimum</td><td>~1790–1830</td><td>PS body re-entry → GRS eruption ~1828</td><td>—</td></tr>
+  <tr><td>Maunder Minimum</td><td>~1645–1715</td><td>Cassini Cycle — PS visible</td><td>~145 yr</td></tr>
+  <tr><td>Spörer Minimum</td><td>~1450–1550</td><td>Predicted eruption cycle</td><td>~195 yr</td></tr>
+  <tr><td>Wolf Minimum</td><td>~1280–1350</td><td>Predicted eruption cycle</td><td>~170 yr</td></tr>
+  <tr><td>Oort Minimum</td><td>~1010–1050</td><td>Predicted eruption cycle</td><td>~270 yr</td></tr>
+</table>
+
+<p>The spacing is irregular — 145, 195, 170, 270 years — which is itself evidence for the model. <b>Gravitational orbits are clockwork. Magnetic cycles are not.</b> They depend on turbulent convection, accumulated stress, variable coupling strength, and the mass/energy of each individual eruption. The irregularity of grand minima has always been a puzzle for purely internal solar models. A coupled magnetic system is <i>expected</i> to produce irregular, quasi-periodic oscillations.</p>
+
+<p>The Carrington Cycle's longer predicted spacing (~340 years from Dalton to next minimum) reflects the larger eruption: more mass ejected means a heavier body, slower descent, longer transit back to the metallic hydrogen layer. Each cycle carries its own timescale, set by its own eruption energy.</p>
+
+<h3>The solar record as a telescope into Jupiter</h3>
+
+<p>We have only 360 years of telescopic observations of Jupiter — and only 195 years of continuous GRS monitoring. But we have 14,000 years of solar activity data written in tree rings and ice cores. If the correlation is real, the solar proxy record becomes a <b>deep-time record of Jupiter's magnetic volcanic activity</b>.</p>
+
+<p>Each grand minimum in the ¹⁴C record potentially marks a Jupiter eruption cycle. Each transition out of a minimum potentially marks the moment a new plume breached the observable atmosphere or a previous body re-entered the metallic hydrogen layer. The timing, duration, and depth of each solar minimum would encode information about the mass, energy, and depth of the corresponding Jovian eruption.</p>
+
+<p>This is testable with existing data. The research program: correlate the ¹⁴C/¹⁰Be proxy record with a model of Jupiter eruption timing and expected gravitational signatures, then compare predicted density anomalies at specific depths in Jupiter's interior with Juno's measured gravity field.</p>
+
+<!-- ============================================================ -->
+<h2>X. Testable Predictions</h2>
+
+<div class="prediction">
+  <div class="tag">PREDICTION 1 — GRAVITY ANOMALY</div>
+  <p><b>A compact mass concentration should exist beneath the GRS</b> at 300–500 km depth, not fully explainable by wind-driven density redistribution. As the body sinks, this anomaly should migrate deeper. Juno's gravity measurements may already contain this signal — it would appear as a component of the gravity field at 22°S that doesn't decompose cleanly into thermal wind balance.</p>
+</div>
+
+<div class="prediction">
+  <div class="tag">PREDICTION 2 — ELECTROMAGNETIC SIGNATURE</div>
+  <p><b>A conducting body 400–1,000 km wide, sinking through Jupiter's magnetic field, should produce detectable electromagnetic signatures</b> — potentially easier to find than the gravity anomaly. Three channels:</p>
+  <p><b>Eddy current magnetic anomaly:</b> Lenz braking currents circulating in the body generate their own magnetic dipole — a localized blip at 22°S, rotating with Jupiter every 9.9 hours. Juno's magnetometer should see this as a residual that doesn't fit the dynamo field model. Over multi-year data, the anomaly should slowly change character as the body migrates deeper into a stronger field region.</p>
+  <p><b>Induced radio emission:</b> Eddy currents radiate. The body would produce a localized, polarized radio component at frequencies set by the local field strength and the body's conductivity. This signal would carry the 9.9-hour rotation period and potentially the 90-day oscillation.</p>
+  <p><b>MHD wake:</b> A conducting body moving through conducting fluid leaves a magnetohydrodynamic wake — disturbed field lines trailing behind the body. This could extend thousands of km and would appear to Juno's magnetometer as an elongated field disturbance downstream of the GRS position.</p>
+  <p>Electromagnetic detection may be more promising than gravity: magnetic anomalies from eddy currents are sharply localized with distinctive spectral signatures, while the gravity signal from a 10¹⁷ kg body in a 10²⁷ kg planet is one part in a billion.</p>
+</div>
+
+<div class="prediction">
+  <div class="tag">PREDICTION 3 — DEEP DENSITY ANOMALY AT 22°S</div>
+  <p><b>A second, deeper density anomaly from Cassini's PS body</b> should exist at ~3,000–8,000 km depth at ~22°S, representing the remnant of the previous cycle's sinking body. This would currently be interpreted as a formation relic or measurement noise.</p>
+</div>
+
+<div class="prediction">
+  <div class="tag">PREDICTION 4 — VISIBLE EXTINCTION ~2060</div>
+  <p><b>The GRS visible storm will disappear around 2060–2070</b> based on the ln(1−x) critical collapse model. The heat signature should persist longer than the visible storm, declining gradually rather than vanishing abruptly.</p>
+</div>
+
+<div class="prediction">
+  <div class="tag">PREDICTION 5 — 90-DAY OSCILLATION PERSISTS</div>
+  <p><b>The 90-day oscillation should continue even as the visible storm weakens</b>, because it reflects the dynamics of the embedded body (libration in the potential well), not the atmospheric vortex. If the storm is purely atmospheric, the oscillation should change character as the storm shrinks.</p>
+</div>
+
+<div class="prediction">
+  <div class="tag">PREDICTION 6 — INTERNAL LAYERING</div>
+  <p><b>Jupiter's heavy element distribution should show discrete concentrations at specific depths</b> corresponding to Lenz braking bottlenecks, rather than smooth gradients. Each layer represents the "stall depth" of a previous eruption cycle's sinking body.</p>
+</div>
+
+<div class="prediction">
+  <div class="tag">PREDICTION 7 — SOLAR CORRELATION</div>
+  <p><b>Jupiter's deep atmospheric activity should correlate with solar cycle phase</b>, with a delay reflecting propagation and response times. Juno's multi-year dataset should contain this signal. Additionally, future grand solar minima should correlate with observable Jovian atmospheric eruption events.</p>
+</div>
+
+<div class="prediction">
+  <div class="tag">PREDICTION 8 — NEXT CYCLE</div>
+  <p><b>A new GRS-like storm should appear at ~22°S after the current body re-enters the metallic hydrogen layer</b>, estimated at roughly 2150–2200 depending on descent rate. The ¹⁴C/¹⁰Be record should show a correlated solar anomaly at that time.</p>
+</div>
+
+<div class="prediction">
+  <div class="tag">PREDICTION 9 — 9.9-HOUR MODULATION AT IO</div>
+  <p><b>Io's volcanic/electromagnetic activity should show a subtle 9.9-hour modulation</b> correlated with the GRS longitude facing the moon, from both thermal radiation and magnetic perturbation of the Io flux tube. This signal should decrease as the GRS fades.</p>
+</div>
+
+<div class="prediction">
+  <div class="tag">PREDICTION 10 — SUNSPOT RECORD CORRELATION</div>
+  <p><b>Statistical analysis of the ¹⁴C/¹⁰Be proxy record should reveal ~150–250 year quasi-periodic modulations</b> in solar grand minima timing that correlate with the predicted Jupiter eruption cycle. Specifically: each grand minimum should show a transition (onset or termination) that aligns with a predicted Jovian eruption or re-entry event. The Maunder-PS and Dalton-GRS coincidences should not be outliers — the pattern should extend through the full 14,000-year proxy record.</p>
+</div>
+
+<div class="prediction">
+  <div class="tag">PREDICTION 11 — CARRINGTON-CLASS EVENT WINDOW</div>
+  <p><b>If the Sun-Jupiter coupling is real, extreme solar events like the Carrington Event (1859) are not uniformly distributed in time</b> but cluster around the peak stress phase of the coupled system — when Jupiter's eruption plume is active and the Jovian dynamo perturbation is at maximum. The Carrington Event occurred during this window (GRS near peak size, mid-19th century magnetic stress maximum). We are now in the declining phase: the GRS is collapsing, the body is sinking, the perturbation is weakening. The next high-risk window for Carrington-class events would coincide with the next Jupiter eruption cycle, estimated around ~2170–2250. This implies the next ~150 years may carry lower probability of extreme solar storms than current uniform-probability risk models assume.</p>
+  <p style="margin-top: 8px;"><b style="color: var(--red);">Strong caveat:</b> This prediction is based on napkin-level reasoning from a speculative, untested hypothesis. The correlation between Jupiter's eruption cycle and extreme solar events rests on two data points (Maunder/PS and Dalton/GRS) and an unverified coupling mechanism. A thorough statistical analysis of the full ¹⁴C/¹⁰Be proxy record, proper MHD modeling of Sun-Jupiter magnetic coupling, and rigorous assessment of whether grand minima transitions genuinely cluster with predicted Jovian events would all be required before this prediction could inform any practical risk assessment. Infrastructure planning should continue to treat Carrington-class events as possible at any time until this hypothesis is properly tested.</p>
+</div>
+
+<!-- ============================================================ -->
+<h2>XI. Summary of Physical Mechanisms</h2>
+
+<p>Every individual mechanism in this model is established physics. The novelty lies in their combination and application.</p>
+
+<table class="data-table">
+  <tr><th>MECHANISM</th><th>ESTABLISHED IN</th><th>APPLICATION HERE</th></tr>
+  <tr><td>Magnetic reconnection</td><td>Solar physics, magnetospheric physics</td><td>Jupiter's internal dynamo</td></tr>
+  <tr><td>Beam-target fusion</td><td>Particle accelerator physics</td><td>At reconnection X-points</td></tr>
+  <tr><td>Leidenfrost effect</td><td>Fluid dynamics, film boiling</td><td>Thermal envelope around body</td></tr>
+  <tr><td>Lenz's law / eddy currents</td><td>Classical electrodynamics</td><td>Electromagnetic braking of descent</td></tr>
+  <tr><td>MHD co-rotation</td><td>Jupiter's magnetosphere (Io torus)</td><td>Body locked to Jupiter's rotation</td></tr>
+  <tr><td>Convective plumes</td><td>Geophysics, stellar physics</td><td>Erupted material rising</td></tr>
+  <tr><td>Anticyclonic vortex formation</td><td>Atmospheric dynamics</td><td>Coriolis-driven storm from thermal plume</td></tr>
+  <tr><td>Solar-planetary coupling</td><td>Heliophysics (debated)</td><td>Bidirectional Sun-Jupiter feedback</td></tr>
+</table>
+
+<div class="separator">· · ·</div>
+
+<div class="closing">
+  <p>Jupiter almost was a star. It has the same composition as the Sun, its own internal heat source, its own dynamo, its own satellite system formed from a circumplanetary disk. It fell short by a factor of 80 in mass.</p>
+
+  <p>But it didn't stop trying. It generates its own heat. It erupts magnetically, leaving scars visible from Earth. It achieves fusion — briefly, locally, at the breaking points of its own magnetic field — before the fire goes out. Each eruption a tiny ignition. Each one failing to catch. But never stopping.</p>
+
+  <p>The Great Red Spot is not a storm. It is the surface echo of a fusion detonation deep inside Jupiter. A mark left by the planet's own stellar ambition, slowly fading, slowly sinking, destined to return and trigger the next eruption in a cycle as old as the planet itself.</p>
+
+  <p>The fallen titan, carrying a small fire inside it. Tending its garden of moons. Pulsing energy outward from its own magnetic heart. Connected to the Sun by invisible threads of field and plasma, each one's rhythm subtly entraining the other.</p>
+
+  <p>We've known Jupiter for four centuries through telescopes. We've been watching its Great Red Spot shrink for two. We may be watching it die — the visible scar of a magnetic volcanic eruption fading as the body sinks back into the depths from which it came. But the vent remains. The cycle will repeat. And the Sun's tree rings have been recording Jupiter's volcanic history for fourteen thousand years, written in carbon-14, waiting to be read.</p>
+
+  <p>The entire solar system as one instrument, measuring itself.</p>
+</div>
+
+<!-- ============================================================ -->
+<div class="refs">
+  <h2>References & Sources</h2>
+  <p><b>Sánchez-Lavega, A. et al. (2024)</b> "The Origin of Jupiter's Great Red Spot." <i>Geophysical Research Letters</i>. GRS size measurements 1665–2023, formation history.</p>
+  <p><b>Simon, A. et al. (2018)</b> "Historical and Contemporary Trends in the Size, Drift, and Color of Jupiter's Great Red Spot." <i>Astronomical Journal</i>. Shrinkage rates, drift speed, OPAL data.</p>
+  <p><b>Simon, A. et al. (2024)</b> "A Detailed Study of Jupiter's Great Red Spot over a 90-day Oscillation Cycle." <i>Planetary Science Journal</i>. 90-day oscillation, size/shape coupling.</p>
+  <p><b>O'Donoghue, J. et al. (2016)</b> "Heating of Jupiter's upper atmosphere above the Great Red Spot." <i>Nature</i>. 1,600 K thermal anomaly, bottom-up heating.</p>
+  <p><b>Parisi, M. et al. (2021)</b> "The depth of Jupiter's Great Red Spot constrained by Juno gravity overflights." <i>Science</i>. 300–500 km depth, gravity anomaly.</p>
+  <p><b>Wahl, S. et al. (2017)</b> "Comparing Jupiter interior structure models to Juno gravity measurements." <i>Geophysical Research Letters</i>. Dilute core structure.</p>
+  <p><b>Miguel, Y. et al. (2022)</b> "Jupiter's inhomogeneous envelope." <i>Astronomy & Astrophysics</i>. Extended dilute core, heavy element distribution.</p>
+  <p><b>Mankovich, C. & Fuller, J. (2021)</b> "A diffuse core in Saturn revealed by ring seismology." <i>Nature Astronomy</i>. Saturn dilute core comparison.</p>
+  <p><b>Sandnes, T. et al. (2024)</b> "Giant impacts do not produce stable dilute cores." <i>MNRAS</i>. Dense material re-settles after impacts.</p>
+  <p><b>Li, C. et al. (2017)</b> "The distribution of ammonia on Jupiter from a preliminary inversion of Juno MWR data." <i>Geophysical Research Letters</i>. Juno atmospheric profile.</p>
+  <p><b>Bolton, S. et al. (2017)</b> "Jupiter's interior and deep atmosphere: The initial pole-to-pole passes with the Juno spacecraft." <i>Science</i>.</p>
+  <p><b>SILSO v2.0</b> Sunspot Index and Long-term Solar Observations. Royal Observatory of Belgium. Yearly mean sunspot numbers 1700–present.</p>
+  <p><b>NOAA NGDC</b> National Geophysical Data Center, Boulder. Historical sunspot number archives.</p>
+  <p><b>Usoskin, I. (2023)</b> "A history of solar activity over millennia." <i>Living Reviews in Solar Physics</i>. ¹⁴C and ¹⁰Be proxy reconstructions, grand minima catalog.</p>
+  <p><b>Hoyt, D. & Schatten, K. (1998)</b> Group sunspot number series, 1610–present. Solar cycle reconstruction during Maunder Minimum.</p>
+  <p style="margin-top: 16px; color: #554;"><b>Note:</b> This document presents a speculative hypothesis developed through structured reasoning. All individual physical mechanisms cited are well-established. The combination and specific application to an embedded-body/magnetic-eruption scenario is novel and has not been peer-reviewed or numerically modeled at the level required for formal scientific publication. Testable predictions are provided to enable falsification.</p>
+</div>
+
+<div class="separator">· · ·</div>
+
+<!-- APPENDIX -->
+<div style="opacity: 0.65; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border);">
+  <div style="font-family: var(--mono); font-size: 10px; letter-spacing: 2px; color: #554; margin-bottom: 12px;">APPENDIX — SPECULATIVE ENGINEERING NOTE</div>
+  <p style="font-size: 14px; color: #776;">The following is not a prediction of the plume model. It is a separate observation about Jupiter's magnetic field as a potential energy and transportation resource, included for intellectual completeness.</p>
+  <p style="font-size: 14px; color: #776;">Jupiter's magnetic field could theoretically be harvested as a power source. A conducting tether in Jovian orbit generates voltage through Faraday induction — demonstrated by the TSS-1R shuttle experiment (3,500 V from 20 km in Earth's weak field). At Jupiter, with fields ~8,400× stronger, comparable tethers could produce megawatts. Jupiter's field lines also connect its moons, suggesting a theoretical basis for low-energy magnetic transport between satellites. Tesla proposed similar ideas for Earth; Jupiter may be the planet where they become practical. These ideas are independent of the GRS hypothesis and are noted here only as a consequence of Jupiter's extraordinary magnetic properties.</p>
+</div>
+
+</div>
+</body>
+</html>
